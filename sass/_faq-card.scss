@@ -1,0 +1,87 @@
+.faq-card {
+  max-width: 92rem;
+  height: 50.9rem;
+  margin: 0 auto;
+  border-radius: 23px;
+  background-color: #fff;
+  position: relative;
+
+  display: flex;
+
+  &__box-image {
+    position: absolute;
+    width: 20.8%;
+    top: 37.5%;
+    left: -10.5%;
+    z-index: 1;
+  }
+
+  &__image {
+    flex: 0 0 42%;
+    height: 100%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: right 67%;
+    position: relative;
+    overflow: hidden;
+    margin-right: 8.8rem;
+
+    @media only screen and (max-width: 57.5em) {
+      margin-right: 4.4rem;
+    }
+  }
+
+  &__woman-image {
+    position: absolute;
+    width: 123%;
+    top: 12%;
+    right: 0;
+  }
+
+  &__text {
+    flex: 1;
+    padding: 6.5rem 9.5rem 8.3rem 0;
+    
+    @media only screen and (max-width: 57.5em) {
+      padding: 6.5rem 4.5rem 8.3rem 0;
+    }
+  }
+
+  &__header {
+    margin-bottom: 3.7rem;
+  }
+
+  &__item {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid $light-grayish-blue;
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .paragraph {
+      font-size: 1.4rem;
+      margin-right: 2rem;
+      transition: color 0.2s;
+
+      @media only screen and (max-width: 57.5em) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__item:hover {
+    cursor: pointer;
+
+    & .paragraph {
+      color: $soft-red;
+    }
+  }
+
+  &__answer {
+    display: none;
+  }
+}
