@@ -1,12 +1,12 @@
 .faq-card {
   max-width: 92rem;
-  height: 50.9rem;
+  height: 100%;
   margin: 0 auto;
   border-radius: 23px;
   background-color: #fff;
   position: relative;
-
   display: flex;
+  margin-bottom: 2rem;
 
   &__box-image {
     position: absolute;
@@ -14,6 +14,12 @@
     top: 37.5%;
     left: -10.5%;
     z-index: 1;
+
+    @media only screen and (max-width: 45em) {
+      display: none;
+      min-height: 53.5rem;
+      height: auto;
+    }
   }
 
   &__image {
@@ -30,6 +36,10 @@
     @media only screen and (max-width: 57.5em) {
       margin-right: 4.4rem;
     }
+
+    @media only screen and (max-width: 45em) {
+      display: none;
+    }
   }
 
   &__woman-image {
@@ -39,23 +49,68 @@
     right: 0;
   }
 
+  &__image-mobile {
+    width: 24rem;
+    height: 14.5rem;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+
+    display: none;
+
+    @media only screen and (max-width: 45em) {
+      display: initial;
+    }
+  }
+
+  &__woman-image-mobile {
+    position: absolute;
+    top: -60%;
+    left: -10%;
+  }
+
   &__text {
     flex: 1;
     padding: 6.5rem 9.5rem 8.3rem 0;
-    
+
     @media only screen and (max-width: 57.5em) {
       padding: 6.5rem 4.5rem 8.3rem 0;
+    }
+
+    @media only screen and (max-width: 45em) {
+      padding: 13.2rem 2.4rem 5rem 2.4rem;
+    }
+
+    @media only screen and (max-width: 23em) {
+      padding: 11.5rem 1.8rem 1.8rem 1.8rem;
     }
   }
 
   &__header {
     margin-bottom: 3.7rem;
+
+    @media only screen and (max-width: 45em) {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    @media only screen and (max-width: 23em) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__item {
     padding: 1.6rem 0;
     border-bottom: 1px solid $light-grayish-blue;
+    position: relative;
   }
+
 
   &__question {
     display: flex;
@@ -66,14 +121,19 @@
       font-size: 1.4rem;
       margin-right: 2rem;
       transition: color 0.2s;
+      z-index: 10;
 
       @media only screen and (max-width: 57.5em) {
         font-size: 1.3rem;
       }
+
+      @media only screen and (max-width: 23em) {
+        margin-right: 0;
+      }
     }
   }
 
-  &__item:hover {
+  &__question:hover {
     cursor: pointer;
 
     & .paragraph {
@@ -83,5 +143,25 @@
 
   &__answer {
     display: none;
+  }
+
+  &__arrow-icon {
+    transition: transform 0.2s;
+    z-index: 10;
+  }
+
+  &__item.active {
+
+    .faq-card__question p {
+      font-weight: 700;
+    }
+
+    .faq-card__arrow-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-card__answer {
+      display: initial;
+    }
   }
 }

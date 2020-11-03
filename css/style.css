@@ -24,29 +24,49 @@ html {
 
 .section-faq {
   width: 100%;
+  height: 76.8rem;
   background-image: linear-gradient(to bottom, #af67e9, #6565e7);
   padding: 13rem 0; }
+  @media only screen and (max-width: 45em) {
+    .section-faq {
+      height: auto; } }
 
 .container {
   width: 100%;
+  height: 100%;
   max-width: 144rem;
   margin: 0 auto;
   padding: 0 5rem; }
+  @media only screen and (max-width: 45em) {
+    .container {
+      height: auto; } }
+  @media only screen and (max-width: 28em) {
+    .container {
+      padding: 0 2.4rem; } }
+  @media only screen and (max-width: 23em) {
+    .container {
+      padding: 0 1.5rem; } }
 
 .faq-card {
   max-width: 92rem;
-  height: 50.9rem;
+  height: 100%;
   margin: 0 auto;
   border-radius: 23px;
   background-color: #fff;
   position: relative;
-  display: flex; }
+  display: flex;
+  margin-bottom: 2rem; }
   .faq-card__box-image {
     position: absolute;
     width: 20.8%;
     top: 37.5%;
     left: -10.5%;
     z-index: 1; }
+    @media only screen and (max-width: 45em) {
+      .faq-card__box-image {
+        display: none;
+        min-height: 53.5rem;
+        height: auto; } }
   .faq-card__image {
     flex: 0 0 42%;
     height: 100%;
@@ -60,22 +80,58 @@ html {
     @media only screen and (max-width: 57.5em) {
       .faq-card__image {
         margin-right: 4.4rem; } }
+    @media only screen and (max-width: 45em) {
+      .faq-card__image {
+        display: none; } }
   .faq-card__woman-image {
     position: absolute;
     width: 123%;
     top: 12%;
     right: 0; }
+  .faq-card__image-mobile {
+    width: 24rem;
+    height: 14.5rem;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+    display: none; }
+    @media only screen and (max-width: 45em) {
+      .faq-card__image-mobile {
+        display: initial; } }
+  .faq-card__woman-image-mobile {
+    position: absolute;
+    top: -60%;
+    left: -10%; }
   .faq-card__text {
     flex: 1;
     padding: 6.5rem 9.5rem 8.3rem 0; }
     @media only screen and (max-width: 57.5em) {
       .faq-card__text {
         padding: 6.5rem 4.5rem 8.3rem 0; } }
+    @media only screen and (max-width: 45em) {
+      .faq-card__text {
+        padding: 13.2rem 2.4rem 5rem 2.4rem; } }
+    @media only screen and (max-width: 23em) {
+      .faq-card__text {
+        padding: 11.5rem 1.8rem 1.8rem 1.8rem; } }
   .faq-card__header {
     margin-bottom: 3.7rem; }
+    @media only screen and (max-width: 45em) {
+      .faq-card__header {
+        text-align: center;
+        margin-bottom: 3rem; } }
+    @media only screen and (max-width: 23em) {
+      .faq-card__header {
+        margin-bottom: 1.5rem; } }
   .faq-card__item {
     padding: 1.6rem 0;
-    border-bottom: 1px solid #e7e7e9; }
+    border-bottom: 1px solid #e7e7e9;
+    position: relative; }
   .faq-card__question {
     display: flex;
     justify-content: space-between;
@@ -83,20 +139,34 @@ html {
     .faq-card__question .paragraph {
       font-size: 1.4rem;
       margin-right: 2rem;
-      transition: color 0.2s; }
+      transition: color 0.2s;
+      z-index: 10; }
       @media only screen and (max-width: 57.5em) {
         .faq-card__question .paragraph {
           font-size: 1.3rem; } }
-  .faq-card__item:hover {
+      @media only screen and (max-width: 23em) {
+        .faq-card__question .paragraph {
+          margin-right: 0; } }
+  .faq-card__question:hover {
     cursor: pointer; }
-    .faq-card__item:hover .paragraph {
+    .faq-card__question:hover .paragraph {
       color: #f47c57; }
   .faq-card__answer {
     display: none; }
+  .faq-card__arrow-icon {
+    transition: transform 0.2s;
+    z-index: 10; }
+  .faq-card__item.active .faq-card__question p {
+    font-weight: 700; }
+  .faq-card__item.active .faq-card__arrow-icon {
+    transform: rotate(180deg); }
+  .faq-card__item.active .faq-card__answer {
+    display: initial; }
 
 .attribution {
   font-size: 11px;
-  text-align: center; }
+  text-align: center;
+  color: #fff; }
 
 .attribution a {
-  color: #3e52a3; }
+  color: #fff; }
